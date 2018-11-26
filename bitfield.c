@@ -3,7 +3,7 @@
 #include<stdlib.h>
 #include<string.h>
 
-#define MODE_BE
+#define MODE_BE //big-endian
 
 uint8_t buf[]={0x5b,0x59,0x97,0x85};
 
@@ -30,6 +30,7 @@ struct BitField
 #endif
 };
 
+/*little-endian's bytes from right to left to struct BitField*/
 int main(int argc,char *argv[])
 {
     struct BitField Test;
