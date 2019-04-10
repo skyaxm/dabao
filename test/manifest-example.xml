@@ -1,0 +1,18 @@
+<manifest version="1.0">
+    <products>
+		<product vendor="XX" code="0818820\.x11" name="RUXX.x11" buildId="1"/>
+		<product vendor="XX" code="0818820\.x12" name="RUXX.x12" buildId="1"/>
+		<product vendor="XX" code="0818818\…" name="RUYY" buildId="2"/>
+	</products>
+	<builds>
+		<build id="1" bldName="xyz" bldVersion="1.0">
+			<file fileName="xxxx" fileVersion="1.0" path="full-file_name-with-path-relative-to-package-root-folder" checksum="FAA898"/>
+			<file fileName="yyyy" fileVersion="2.0" path="full-file_name-with-path-relative-to-package-root-folder" checksum="AEE00C"/>
+		</build>
+		<build id="2" bldName="xyz" bldVersion="1.0">
+			<file fileName="xxxx" fileVersion="1.0" path="full-file_name-with-path-relative-to-package-root-folder" checksum="FAA898"/>
+            <file fileName="yyyy" fileVersion="2.0" path="full-file_name-with-path-relative-to-package-root-folder" checksum="AEE00C"/>
+			<file fileName="zzzz" fileVersion="1.5" path="full-file_name-with-path-relative-to-package-root-folder" checksum="ABCDEF"/>
+		</build>
+    </builds>
+</manifest>

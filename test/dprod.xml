@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<allproducts>
+  <products>
+	<product name="name11" value="value11" />
+	<product name="name12" value="value12" />
+	<product name="name13" value="value13" />
+	<product name="name14" value="value14" />
+  </products>
+  <products>
+	<product name="name21" value="value21" />
+	<product name="name22" value="value22" />
+	<product name="name23" value="value23" />
+  </products>
+  <products>
+	<product name="name31" value="value31" />
+	<product name="name32" value="value32" />
+  </products>
+</allproducts>
