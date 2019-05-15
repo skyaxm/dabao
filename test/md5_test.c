@@ -3,6 +3,22 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+int main(int argc, char *argv[])
+{
+    char cmd[256];
+    sprintf(cmd, "md5sum ./%s 2>&1", argv[1]);
+    FILE *f = popen(cmd, "w");
+    if (f == NULL) {
+        perror("popen()");
+    }
+    char buf[256];
+    while(fgets(buf, sizeof(buf), f)) {
+        printf("buf:%s\n", buf);
+    }
+    pclose(f);
+    return 0;
+}
+#if 0
 int main()
 {
     int n;
@@ -25,3 +41,4 @@ int main()
 
     return 0;
 }
+#endif

@@ -147,6 +147,7 @@ int main(void)
 #endif
 	xmlChar *docname = "/media/BOOT/slot1/manifest-FHK.xml";
 	xmlChar *xpath = "/manifest/builds/build";
+    xmlChar *xpath1 = "/manifest/products"
 	xmlDocPtr doc = xmlParseFile(docname);
 	if (doc==NULL)
 	{
@@ -160,8 +161,9 @@ int main(void)
 	}
 
     xmlXPathObjectPtr result = xmlXPathEvalExpression(xpath, context);
+    xmlXPathObjectPtr result1 = xmlXPathEvalExpression(xpath1, context);
     xmlXPathFreeContext(context);
-	if(result == NULL)
+	if(result == NULL || result1 == NULL)
 	{
 		printf("Error in xmlXPathEvalExpression\n");
 		return -1;
@@ -175,6 +177,7 @@ int main(void)
 	if(result)
 	{
 		xmlNodeSetPtr nodeset = result->nodesetval;
+        xmlChar *id, *bldName, *bldVersion;
 		xmlChar *name, *version, *path, *integrity;
 		printf("nodeset number: %d\n", nodeset->nodeNr);
 		int i;
@@ -182,6 +185,10 @@ int main(void)
 		{
 			xmlNodePtr cur = nodeset->nodeTab[i]; //builds/build
 			printf("cur->name = %s\n", cur->name);
+            id = xmlGetProp(cur, (const xmlChar*)"id");
+            bldName = xmlGetProp(cur, (const xmlChar*)"bldName");
+            bldVersion = xmlGetProp(cur, (const xmlChar*)"bldVersion");
+            printf("id = %s, bldName = %s, bldVersion = %s\n", id, bldName, bldVersion);
 			cur = cur->xmlChildrenNode; //turn to the /builds/build/file
 			while(cur)
 			{

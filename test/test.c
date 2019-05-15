@@ -3,6 +3,37 @@
 #include<errno.h>
 #include<string.h>
 
+int main()
+{
+    printf("abc\n123");
+    printf("abc");
+//    *(int*)0 = 0;
+    int a = 123;
+    printf("%p\n", &a);
+    while(1)
+    {
+
+    }
+
+//    return 0;
+}
+#if 0
+int main()
+{
+    char *cmd = NULL;
+    int ret = system(cmd);
+    printf("status: %d\n", WEXITSTATUS(ret));
+    const char *status = NULL;
+    status = "ha ha ha ~";
+    puts(status);
+    status = "mei xiang da ba!";
+    puts(status);
+
+    return 0;
+}
+#endif
+
+#if 0
 int main(int argc, char *argv[])
 {
     char cmd[256];
@@ -26,6 +57,8 @@ int main(int argc, char *argv[])
     system("rm -rf myslot");
     return 0;
 }
+#endif
+
 #if 0
     int ret = system(cmd);
     if (ret !=0) {
