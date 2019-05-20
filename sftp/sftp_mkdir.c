@@ -1,21 +1,10 @@
 #include <libssh2.h>
 #include <libssh2_sftp.h>
- 
-#ifdef HAVE_WINSOCK2_H
-#include <winsock2.h>
-#endif
-#ifdef HAVE_SYS_SOCKET_H
+
 #include <sys/socket.h>
-#endif
-#ifdef HAVE_NETINET_IN_H
 #include <netinet/in.h>
-#endif
-#ifdef HAVE_UNISTD_H
 #include <unistd.h>
-#endif
-#ifdef HAVE_ARPA_INET_H
 #include <arpa/inet.h>
-#endif
  
 #include <sys/types.h>
 #include <fcntl.h>
@@ -35,17 +24,6 @@ int main(int argc, char *argv[])
     const char *sftppath = "/tmp/sftp_mkdir";
     int rc;
     LIBSSH2_SFTP *sftp_session;
- 
-#ifdef WIN32
-    WSADATA wsadata;
-    int err;
- 
-    err = WSAStartup(MAKEWORD(2, 0), &wsadata);
-    if(err != 0) {
-        fprintf(stderr, "WSAStartup failed with error: %d\n", err);
-        return 1;
-    }
-#endif
  
     if(argc > 1) {
         hostaddr = inet_addr(argv[1]);
@@ -166,13 +144,8 @@ int main(int argc, char *argv[])
     libssh2_session_disconnect(session, "Normal Shutdown");
 
     libssh2_session_free(session);
-
- 
-#ifdef WIN32
-    closesocket(sock);
-#else
     close(sock);
-#endif
+
     fprintf(stderr, "all done\n");
  
     libssh2_exit();
