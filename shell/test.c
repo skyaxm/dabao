@@ -4,7 +4,7 @@
 
 int main()
 {
-    int ret = system("la -l");
+    int ret = system("./test.sh");
     printf("ret:%d\n", ret);
     int status = WEXITSTATUS(ret);
     printf("status:%d\n", status);

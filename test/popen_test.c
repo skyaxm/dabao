@@ -1,7 +1,22 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<errno.h>
+#include<string.h>
 
+int main()
+{
+    FILE *f = popen("ls /O-RAN", "r");
+    if (f == NULL)
+        perror("popen()");
+    char buf[1024];
+    while (fgets(buf, sizeof(buf), f)) {
+        printf("%s", buf);
+    }
+    pclose(f);
+
+    return 0;
+}
+#if 0
 int main()
 {
 //    char *md5sum_cmd = "md5sum /media/BOOT/slot2/uImage 2>&1 | cut -d' ' -f1 | cut -b1-6";
@@ -19,6 +34,8 @@ int main()
 
     return 0;
 }
+#endif
+
 #if 0
 int main()
 {

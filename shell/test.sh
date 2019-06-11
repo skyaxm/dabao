@@ -2,13 +2,14 @@
 func()
 {
     echo "hello"
-    return 5
+    exit 5
 }
 
 echo $0
 echo $#
 echo "start"
 func
+sleep 5
 echo "end"
 
 :<<EOF
