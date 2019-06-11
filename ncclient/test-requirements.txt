@@ -1,6 +1,0 @@
-pytest-runner
-pytest-cov
-sphinx
-flake8
-mock
-nose
