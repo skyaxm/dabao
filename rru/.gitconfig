@@ -1,0 +1,7 @@
+[user]
+	name = jacky168wang
+	email = kenwj@sina.com
+[http]
+	sslverify = false
+[alias]
+	glog = log --oneline --decorate --graph --all

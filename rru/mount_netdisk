@@ -1,0 +1,2 @@
+mkdir /pc
+mount -t nfs -o nolock 10.180.8.67:/home/facc_rf/ad9009autotest/rru_script

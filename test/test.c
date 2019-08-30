@@ -3,6 +3,23 @@
 #include<errno.h>
 #include<string.h>
 
+struct test {
+    int a;
+    int b;
+    char str[20];
+};
+
+int main(int argc, char* argv[])
+{
+    struct test t1 = {1,2, "helloworld"};
+    struct test t2;
+    t2=t1;
+    strcpy(t1.str, "hello");
+    printf("t2.str = %s\n", t2.str);
+
+    return 0;
+}
+#if 0
 int main()
 {
     printf("abc\n123");
@@ -17,6 +34,8 @@ int main()
 
 //    return 0;
 }
+#endif
+
 #if 0
 int main()
 {
